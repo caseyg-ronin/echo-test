@@ -1,9 +1,0 @@
-project: ronin
-source:
-  repoURL: 'https://github.com/caseyg-ronin/echo-test.git'
-  path: .
-  targetRevision: HEAD
-destination:
-  server: 'https://10.211.1.210:6443'
-  namespace: ronin-casey-echo
-
