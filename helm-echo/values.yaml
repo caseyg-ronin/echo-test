@@ -1,0 +1,23 @@
+namespace: ronin-casey-echo
+configMap:
+  enabled: yes
+  name: ronin-casey-echo
+application:
+  name: ronin-casey-cho
+  port: 80
+  securityContext:
+    runAsUser: 1000
+    readOnlyRootFilesystem: true
+  deployDatabase:
+    enabled: no
+  command: ["/bin/bash", "-c"]
+  args: ["python -m src.ronin_ctl serve --port 8000"]
+  env:
+    - name: LANG
+      value: en_US.UTF-8
+ingress:
+  host: ronin-casey-echo.dev.projectronin.io
+environment: dev
+image:
+  image: ealen/echo-server
+  tag: latest
